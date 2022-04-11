@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "Bảng điều khiển";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="wrapper wrapper-content">
+    <div class="row">
+
+        <div class="col-lg-3">
+            <div class="widget style1 lazur-bg">
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fa fa-newspaper-o fa-5x"></i>
+                    </div>
+                    <div class="col-9 text-right">
+                        <span> Bài viết</span>
+                        <h2 class="font-bold">@ViewBag.CountProduct</h2>
+                        <a href="@Url.Action("Index","Product")" title="Product" target="_blank" style="color: Black"><span>  Truy cập ngay</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="widget style1 lazur-bg">
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fa fa-sliders fa-5x"></i>
+                    </div>
+                    <div class="col-9 text-right">
+                        <span> Banner</span>
+                        <h2 class="font-bold">@ViewBag.CountSlider</h2>
+                        <a href="@Url.Action("Index","Slider")" title="Banner" target="_blank" style="color: Black"><span>  Truy cập ngay</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="widget style1 lazur-bg">
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fa fa-id-card fa-5x"></i>
+                    </div>
+                    <div class="col-9 text-right">
+                        <span> Liên hệ chưa trả lời</span>
+                        <h2 class="font-bold">@ViewBag.CountContactDoneReply</h2>
+                        <a href="@Url.Action("Index","Contact")" title="Contact" target="_blank" style="color: Black"><span>  Truy cập ngay</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="widget style1 lazur-bg">
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fa fa-users fa-5x"></i>
+                    </div>
+                    <div class="col-9 text-right">
+                        <span> Khách hàng</span>
+                        <h2 class="font-bold">@ViewBag.CountUser</h2>
+                        <a href="@Url.Action("Index","Users")" title="User" target="_blank" style="color: Black"><span>  Truy cập ngay</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            toastr.options = {
+                closeButton: true,
+                progressBar: true,
+                showMethod: 'slideDown',
+                timeOut: 4000
+            };
+            toastr.success('@Session["Admin_Name"]', 'Xin chào Quản trị viên');
+
+        }, 1300);
+    });
+</script>
+
+
+

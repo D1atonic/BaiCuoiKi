@@ -1,0 +1,123 @@
+﻿@model HALAShop.Models.MPost
+@{
+    ViewBag.Title = Model.Title;
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+<div class="container">
+    <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="single-product-right-sidebar">
+                    <h2 class="left-title">Bài viết mới nhất</h2>
+                    <ul>
+                        @foreach (var item in ViewBag.listother)
+                        {
+                    <div class="item">
+                        <div class="single-product-item">
+                            <div class="product-image">
+                                <a href="~/@item.Slug"><img src="~/Public/library/post/@item.Img" alt="@item.Title" height="120px;" /></a>
+                            </div>
+                            <div class="product-info">
+                                <a href="@item.Slug">@item.Title</a>
+                            </div>
+                        </div>
+                    </div>}
+
+                    </ul>
+                </div>
+                <div class="single-product-right-sidebar clearfix">
+                    <h2 class="left-title"> Tìm kiếm nhiều </h2>
+                    <div class="category-tag">
+                        <a href="#">Arsenal</a>
+                        <a href="#">NHA</a>
+                        <a href="#">Real Mandrid</a>
+                        <a href="#">Bayern Munich</a>
+                        <a href="#">Barcelona</a>
+                        <a href="#">Chuyển nhượng</a>
+                        <a href="#">Juventus</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                @Html.Raw(Model.Detail)
+                <div class="row">
+                    <!-- CSS  -->
+                    <link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
+                    <!-- HTML -->
+                    <video id='hls-example' class="video-js vjs-default-skin" preload="auto" width="800" height="450" data-setup='{}' autoplay controls>
+                        <source type="application/x-mpegURL" src="https://live-k2302-kbp.1plus1.video/sport/smil:sport.smil/chunklist_b6000000.m3u8">
+                    </video>
+                    <!-- JS code -->
+                    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+                    <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
+                    <script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
+                    <script>
+                        var player = videojs('hls-example');
+                        player.play();
+                    </script>
+                </div>
+            </div>
+            @*<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="single-product-right-sidebar">
+                    <h2 class="left-title">Bài viết mới nhất</h2>
+                    <ul>
+                        @foreach (var item in ViewBag.listother)
+                        {
+                    <div class="item">
+                        <div class="single-product-item">
+                            <div class="product-image">
+                                <a href="~/@item.Slug"><img src="~/Public/library/post/@item.Img" alt="@item.Title" height="120px;" /></a>
+                            </div>
+                            <div class="product-info">
+                                <a href="@item.Slug">@item.Title</a>
+                            </div>
+                        </div>
+                    </div>}
+
+                    </ul>
+                </div>
+                <div class="single-product-right-sidebar clearfix">
+                    <h2 class="left-title">Tìm kiếm nhiều </h2>
+                    <div class="category-tag">
+                        <a href="#">Arsenal</a>
+                        <a href="#">NHA</a>
+                        <a href="#">Real Mandrid</a>
+                        <a href="#">Bayern Munich</a>
+                        <a href="#">Barcelona</a>
+                        <a href="#">Chuyển nhượng</a>
+                        <a href="#">Juventus</a>
+                    </div>
+                </div>
+            </div>*@
+        
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="left-title-area">
+                <h2 class="left-title">Bài viết cùng danh mục</h2>
+            </div>
+        </div>
+        <div class="related-product-area featured-products-area">
+            <div class="col-sm-12">
+                <div class=" row">
+                    <div class="related-product">
+                        @foreach (var item in ViewBag.listother)
+                        {
+                            <div class="item">
+                                <div class="single-product-item">
+                                    <div class="product-image">
+                                        <a href="~/@item.Slug"><img src="~/Public/library/post/@item.Img" alt="@item.Title" height="120px;" /></a>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="@item.Slug">@item.Title</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>

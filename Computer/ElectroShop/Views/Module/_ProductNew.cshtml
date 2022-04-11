@@ -1,0 +1,58 @@
+﻿@model IEnumerable<HALAShop.Models.MProduct>
+<div class="new-product-area">
+    <div class="left-title-area">
+        <h2 class="left-title">Trực Tiếp</h2>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="home2-new-pro-carousel">
+                    @foreach (var item in Model)
+                    {
+                        if (item.CateID == 1)
+                        {
+                            <div class="item">
+                                <div class="new-product">
+                                    <div class="single-product-item">
+                                        <div class="product-image">
+                                            <a href="~/@item.Slug"><img src="~/Public/library/product/@item.Image" width="110px;" alt="@item.Name" /></a>
+                                            @if (item.CateID != 0)
+                                            {
+                                                <a href="#" class="new-mark-box">new</a>
+                                            }
+                                            else
+                                            {
+
+                                            }
+                                            
+                                        </div>
+                                        <div class="product-info">
+                                            <!--<div class="customar-comments-box">
+                                                <div class="rating-box">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>-->
+                                                    @*<i class="fa fa-star-half-empty"></i>*@
+                                                <!--</div>-->
+                                                @*<div class="review-box">
+                                                        <span>3 Review(s)</span>
+                                                    </div>*@
+                                            <!--</div>-->
+                                            <a href="~/@item.Slug">@item.Name</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else if (item.CateID == 0)
+                        {
+
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
